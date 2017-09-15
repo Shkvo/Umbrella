@@ -1,0 +1,8 @@
+{
+    "city":{
+        "day" : "monday",
+        "number": 14,
+        "temperature" : 24,
+        "status" : "raining"
+    }
+}
