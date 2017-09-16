@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18.88 23.5">
+    <defs>
+        <style>
+
+        @keyframes raining{
+            0%{
+                transform: translate(0%,0%);
+                opacity 0.2;
+            }
+            50%{
+                transform: translate(-18%,19%);
+                opacity: 1;
+            }
+            100%{
+                transform: translate(-25%,35%);
+                opacity: 0.2;
+            }
+        }
+
+            .cls-1{
+            fill:#22242d;
+            animation: raining1 2s ease-in-out infinite;
+            }
+            .cls-2{fill:#d2f0fc;
+            animation: raining1 2s ease-in-out infinite;}
+            .cls-3{fill:#a6e0f7;
+            animation: raining1 2s ease-in-out infinite;}
+            .cls-4{fill:#73ccf9;
+            animation: raining1 2s ease-in-out infinite;}
+
+            #f1{
+                animation: raining 2s infinite ease-in-out backwards;
+            }
+            #f2{
+                animation: raining 2s 0.2s infinite ease-in-out backwards;
+            }
+            #f3{
+                animation: raining 2s 0.3s infinite ease-in-out backwards;
+            }
+        </style>
+    </defs>
+    <g id="Слой_2" data-name="Слой 2">
+        <g id="iconmonstr">
+            <path id="umbrella-10" class="cls-1" d="M12.76,9.4l.41-.72a.79.79,0,1,0-1.36-.79l-.41.72A9.15,9.15,0,0,0,0,11a3.93,3.93,0,0,1,5.46,3.15,3.88,3.88,0,0,1,5.4,3.12,4,4,0,0,1,5.51,3.18A9.22,9.22,0,0,0,12.76,9.4Zm-4,6.89-3.48,6A2.36,2.36,0,0,1,1.21,20l.39-.68L3,20.06l-.39.68a.79.79,0,0,0,1.36.79l3.49-6A2.2,2.2,0,0,1,8.79,16.29Z" />
+        </g>
+        <g id="f1" data-name="Слой 4">
+            <path class="cls-2" d="M18.76,4.56C17,5.43,15.84,6,15.34,6.83a1.83,1.83,0,0,0,3.17,1.83C19,7.79,18.9,6.55,18.76,4.56Z" />
+        </g>
+        <g id="f2" data-name="Слой 2">
+            <path class="cls-3" d="M16.6,0c-1.43.7-2.34,1.12-2.74,1.81a1.46,1.46,0,0,0,2.53,1.46C16.79,2.59,16.71,1.59,16.6,0Z" />
+        </g>
+        <g id="f3" data-name="Слой 3">
+            <path class="cls-4" d="M10.52,1.5C8.73,2.37,7.6,2.9,7.1,3.77A1.83,1.83,0,0,0,10.26,5.6C10.76,4.73,10.66,3.48,10.52,1.5Z" />
+        </g>
+    </g>
+</svg>

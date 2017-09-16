@@ -6,6 +6,36 @@
     align-items: center;
 }
 
+.app{
+    height: 100vh;
+}
 .content{
+    font-family: sans-serif;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    height: 100%;
     padding: 25px;
+}
+
+.content h1 {
+    margin: 0;
+    color: #fff;
+    font-size: 70px;
+}
+
+.main-info{
+    display: flex;
+    justify-content: flex-start;
+}
+.main-info h1:first-child{
+    margin-right: 10px;
+}
+.main-info h1:last-child {
+    margin-right: 10px;
+    color: #637B96
+}
+
+h2{
+    color: #627A97;
 }

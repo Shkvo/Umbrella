@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './css/Header.css'
+import logo from './Umbrella.svg';
 
 
 class Header extends Component {
@@ -28,7 +29,11 @@ class Header extends Component {
     render(){
         return (
             <header>
-                <h1>Umbrella</h1>
+                <div className="logo-wrapp">
+                    <object data={logo} type="image/svg+xml" aria-label="logo"> </object>
+                    <h1>Umbrella</h1>
+                </div>
+                
                 <input 
                     onKeyDown={this.handleKeyPress} 
                     onChange={this.handleChange} 

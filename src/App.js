@@ -29,9 +29,13 @@ class App extends Component {
 				<div className="App">
 					<Header data ={this.props.data} getWeatherByCity={this.props.getWeatherByCity} />
 					<div className="content">
-						<h1>{this.props.data[this.props.city].name}</h1>
-						<h1>{Math.floor(this.props.data[this.props.city].main.temp - 273)}C°</h1>
-						<h3>{this.props.data[this.props.city].weather[0].description}</h3>
+						<div className="main-info">
+							<h1>{this.props.data[this.props.city].name}</h1>
+							<h1>{Math.floor(this.props.data[this.props.city].main.temp - 273)}C°</h1>
+						</div>
+						<div className="secondary-info">
+							<h2>{this.props.data[this.props.city].weather[0].description}</h2>
+						</div>
 					</div>
 				</div>
 			);
@@ -43,7 +47,6 @@ class App extends Component {
 const mapStateToProps = (state) => (
 	{
 		data: state.weatherData,
-		fetching: state.fetching,
 		city: state.weatherData.currentCity
 	}
 )
@@ -54,9 +57,9 @@ const mapDispatchToProps = (dispatch) => (
 			dispatch(requestWeather());
 		},
 		getWeatherByCity(city){
-					dispatch(requestWeatherByCity(city));
-				}
-			}
+			dispatch(requestWeatherByCity(city));
+		}
+	}
 )
 
 
