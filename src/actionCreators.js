@@ -1,4 +1,4 @@
-import { RECEIVE_WEATHER } from './actions';
+import { RECEIVE_WEATHER, RECEIVE_WEATHER_CITY } from './actions';
 import axios from 'axios';
 
 var apiKey = '149891947be9deecbb1ced41871cdb4e';
@@ -6,6 +6,11 @@ var apiKey = '149891947be9deecbb1ced41871cdb4e';
 const receiveWeather = (response) => ({
     type: RECEIVE_WEATHER,
     payload: response.data
+})
+
+const receiveWeatherByCity = (response) => ({
+    type: RECEIVE_WEATHER_CITY,
+    payload: response
 })
 
 export const requestWeather = () => {
@@ -25,6 +30,18 @@ export const requestWeather = () => {
         }
     }
 
-
-
-    // .get(`http://api.openweathermap.org/data/2.5/weather?lat=${pos.lat}&lon=${pos.lon}&APPID=${apiKey}`)
+export const requestWeatherByCity = (city) => {
+    return (dispatch,getState) => {
+        var state = getState();
+        if(state.weatherData[city] === city){
+            dispatch(receiveWeatherByCity(city));
+        }else{
+            axios
+                .get(`http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${apiKey}`)
+                .then(response => {
+                    dispatch(receiveWeather(response));
+                });
+        }
+            
+    }
+ }
