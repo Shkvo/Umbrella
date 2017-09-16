@@ -27,8 +27,8 @@ export const requestWeather = () => {
                 });
         }
         navigator.geolocation.getCurrentPosition(setPos);
-        }
     }
+ }
 
 export const requestWeatherByCity = (city) => {
     return (dispatch,getState) => {
@@ -44,4 +44,4 @@ export const requestWeatherByCity = (city) => {
         }
             
     }
- }
+}
