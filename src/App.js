@@ -20,19 +20,25 @@ class App extends Component {
   render() {
 		console.dir(this.props.data)
 		if(!this.props.data[this.props.city]){
-			return <div>
-				<Header data={this.props.data} getWeatherByCity={this.props.getWeatherByCity} />
-				<Spinner />;
+			return 
+				<div>
+					<Header data={this.props.data} getWeatherByCity={this.props.getWeatherByCity} />
+					<Spinner />;
 				</div>
 		}else{
 			return (
 				<div className="App">
+
 					<Header data ={this.props.data} getWeatherByCity={this.props.getWeatherByCity} />
+
 					<div className="content">
+
 						<h1>{this.props.data[this.props.city].name}</h1>
 						<h1>{Math.floor(this.props.data[this.props.city].main.temp - 273)}C°</h1>
 						<h3>{this.props.data[this.props.city].weather[0].description}</h3>
+
 					</div>
+
 				</div>
 			);
 		}
@@ -54,9 +60,9 @@ const mapDispatchToProps = (dispatch) => (
 			dispatch(requestWeather());
 		},
 		getWeatherByCity(city){
-					dispatch(requestWeatherByCity(city));
-				}
-			}
+			dispatch(requestWeatherByCity(city));
+		}
+	}
 )
 
 
