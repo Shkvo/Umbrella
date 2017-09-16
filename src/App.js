@@ -1,60 +1,50 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+import Header from './Header';
+import {connect} from 'react-redux';
 import './css/App.css';
-
+import {requestWeather} from './actionCreators';
 
 class App extends Component {
 
   constructor(props){
-	super(props);
-
-	this.state = {
-	  data: {},
-	  currentPos: {},
+		super(props);
+		this.apiKey = '2878f89b44a53eb7753809a1b6f3d7b8';
 	}
-
-	this.apiKey = '149891947be9deecbb1ced41871cdb4e';
-	this.handleClick = this.handleClick.bind(this);
 	
-  }
-
-  handleClick(){
-	  axios.get(`http://api.openweathermap.org/data/2.5/weather?lat=${this.state.currentPos.lat}&lon=${this.state.currentPos.lon}&APPID=${this.apiKey}`)
-		  // .get(`api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=149891947be9deecbb1ced41871cdb4e`)
-		  .then((response) => {
-			  //   let res = JSON.parse(response);
-			  this.setState({
-				  data: response.data
-			  })
-		  })
-  }
-
-  componentDidMount() {
-		let setPos = (position) => {
-			var pos = {
-				lat: position.coords.latitude,
-				lon: position.coords.longitude
-			};
-			
-			axios.get(`http://api.openweathermap.org/data/2.5/weather?lat=${pos.lat}&lon=${pos.lon}&APPID=${this.apiKey}`)
-				.then((response)=>{
-					this.setState({
-						currentPos: pos,
-						data : response.data
-					})
-				})	
-		}
-		navigator.geolocation.getCurrentPosition(setPos);
-  }
-  
+	componentWillMount() {
+		this.props.getWeather();
+	}
+	
   render() {
-	return (
-	  <div className="App">
-		<h1>{this.state.currentPos.lat},{this.state.currentPos.lon}</h1>
-		<button onClick={this.handleClick}>Click</button>
-	  </div>
-	);
+			return (
+				<div className="App">
+					<Header />
+					<div className="content">
+						<h1>{this.props.data.name}</h1>
+						{/* <button onClick={this.handleClick}>Click me</button>
+						<h1>{this.state.data['lviv'].name}</h1>
+						<h2>{Math.ceil(this.state.data['lviv'].main.temp - 273)} C°</h2>
+						<h2>{this.state.data['lviv'].weather[0].description}</h2> */}
+					</div>
+				</div>
+			);
+		}
   }
-}
+const mapStateToProps = (state) => (
+	{
+		data: state.weatherData
+	}
+)
 
-export default App;
+const mapDispatchToProps = (dispatch) => (
+	{
+		getWeather(){
+			dispatch(requestWeather());
+		}
+	}
+)
+
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(App);
