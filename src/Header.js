@@ -14,7 +14,7 @@ class Header extends Component {
         return (
             <header>
                 <h1>Umbrella</h1>
-                <input type="text" />
+                <input type="text" placeholder="Type your city"/>
             </header>
         )
     }

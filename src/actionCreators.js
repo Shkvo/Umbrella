@@ -1,6 +1,7 @@
 import { RECEIVE_WEATHER } from './actions';
 import axios from 'axios';
 
+var apiKey = '149891947be9deecbb1ced41871cdb4e';
 
 const receiveWeather = (response) => ({
     type: RECEIVE_WEATHER,
@@ -9,20 +10,21 @@ const receiveWeather = (response) => ({
 
 export const requestWeather = () => {
     return (dispatch) => {
-        var setPos = (position,dispatch) => {
+        var setPos = (position) => {
             var pos = {
-                lat: position.coords.latitude,
-                lon: position.coords.longitude
+                lat : position.coords.latitude,
+                lon : position.coords.longitude
             };
-            console.dir(pos)
-            var apiKey = '2878f89b44a53eb7753809a1b6f3d7b8';
             axios
                 .get(`http://api.openweathermap.org/data/2.5/weather?lat=${pos.lat}&lon=${pos.lon}&APPID=${apiKey}`)
                 .then(response => {
-                    console.dir(response)
                     dispatch(receiveWeather(response));
                 });
         }
         navigator.geolocation.getCurrentPosition(setPos);
+        }
     }
-}
+
+
+
+    // .get(`http://api.openweathermap.org/data/2.5/weather?lat=${pos.lat}&lon=${pos.lon}&APPID=${apiKey}`)

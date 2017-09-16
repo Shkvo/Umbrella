@@ -7,7 +7,9 @@ export const weatherData = (state = {},action)=>{
         case RECEIVE_WEATHER:
             return Object.assign({},state,{
                 [action.payload.name.toLowerCase()]: action.payload, 
-                fetching: false});
+                fetching: false,
+                currentCity: action.payload.name.toLowerCase()
+            });
         default:
             return state;
     }
