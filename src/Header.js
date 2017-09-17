@@ -25,6 +25,9 @@ class Header extends Component {
     handleKeyPress(e){
         if (e.keyCode === 13){
             this.props.getWeatherByCity(this.state.city);
+            this.setState({
+                city: ''
+            })
         }
     }
 
