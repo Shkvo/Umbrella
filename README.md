@@ -35,9 +35,9 @@ and follow the instructions in the terminal.
 
 ## Built With
 
-* [create-react-app](http://www.dropwizard.io/1.0.2/docs/) - React boilerplate
+* [create-react-app](https://github.com/facebookincubator/create-react-app) - React boilerplate
 * [React](https://facebook.github.io/react/) - UI library
-* [Redux](https://rometools.github.io/rome/) - State container
+* [Redux](http://redux.js.org/) - State container
 
 ## Author
 
