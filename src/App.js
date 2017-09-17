@@ -26,7 +26,6 @@ class App extends Component {
 		this.props.getWeather();
 	}
 
-
   render() {
 
 		//Bad solution ////////////////////////////////////////////////////////////////
@@ -51,7 +50,7 @@ class App extends Component {
 		//Bad solution ////////////////////////////////////////////////////////////////
 		
 		if(!this.props.data[this.props.city]){
-			return <div>
+			return <div className="App">
 				<Header getWeatherByCity={this.props.getWeatherByCity} />
 				<Spinner />
 				<Footer />
