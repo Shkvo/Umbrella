@@ -51,8 +51,7 @@ class App extends Component {
 		//Bad solution ////////////////////////////////////////////////////////////////
 		
 		if(!this.props.data[this.props.city]){
-			return 
-			<div>
+			return <div>
 				<Header getWeatherByCity={this.props.getWeatherByCity} />
 				<Spinner />
 				<Footer />
