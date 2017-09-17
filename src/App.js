@@ -4,30 +4,59 @@ import {connect} from 'react-redux';
 import './css/App.css';
 import {requestWeather, requestWeatherByCity} from './actionCreators';
 import Spinner from './Spinner';
+import getIcon from './icon';
+
+import sun from './svg/sun.svg';
+import clouds from './svg/clouds.svg';
+import cloudSun from './svg/cloud-sun.svg';
+import fog from './svg/fog.svg';
+import rain from './svg/rain.svg';
+
 
 class App extends Component {
 
-  constructor(props){
+ 	 constructor(props){
 		super(props);
-		
-		this.apiKey = '2878f89b44a53eb7753809a1b6f3d7b8';
+		this.icon = null;
 	}
 	
 	componentDidMount() {
 		this.props.getWeather();
 	}
 
+
   render() {
-		console.dir(this.props.data)
+
+		//Bad solution ////////////////////////////////////////////////////////////////
+		if (this.props.data[this.props.city]) {
+			switch (this.props.data[this.props.city].weather[0].main) {
+				  case "Rain":
+					  this.icon = rain; break;
+				  case "Clouds":
+					  this.icon = clouds; break;
+				  case "Clear":
+					  this.icon = sun; break;
+				  case "Fog":
+					  this.icon = fog; break;
+				  case "Mist":
+					  this.icon = fog; break;
+				  case "Scattered":
+					  this.icon = clouds; break;
+				  default:
+					  this.icon = cloudSun;
+			  }
+		  }
+		//Bad solution ////////////////////////////////////////////////////////////////
+		
 		if(!this.props.data[this.props.city]){
 			return <div>
-				<Header data={this.props.data} getWeatherByCity={this.props.getWeatherByCity} />
+				<Header getWeatherByCity={this.props.getWeatherByCity} />
 				<Spinner />;
 				</div>
 		}else{
 			return (
 				<div className="App">
-					<Header data ={this.props.data} getWeatherByCity={this.props.getWeatherByCity} />
+					<Header getWeatherByCity={this.props.getWeatherByCity} />
 					<div className="content">
 						<div className="main-info">
 							<h1>{this.props.data[this.props.city].name}</h1>
@@ -35,6 +64,7 @@ class App extends Component {
 						</div>
 						<div className="secondary-info">
 							<h2>{this.props.data[this.props.city].weather[0].description}</h2>
+							<object data={this.icon} type="image/svg+xml" aria-label="icon"></object>
 						</div>
 					</div>
 				</div>
@@ -47,7 +77,8 @@ class App extends Component {
 const mapStateToProps = (state) => (
 	{
 		data: state.weatherData,
-		city: state.weatherData.currentCity
+		city: state.weatherData.currentCity,
+		weather: state.weatherData.currentWeather
 	}
 )
 

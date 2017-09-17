@@ -1,5 +1,5 @@
 .spinner-wrapp{
-    height: 100vh;
+    height: 80vh;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -10,17 +10,21 @@
     height: 100vh;
 }
 .content{
+    margin-top: 30px;
     font-family: sans-serif;
     display: flex;
+    width: auto;
     justify-content: flex-start;
     flex-direction: column;
     height: 100%;
     padding: 25px;
+    background: rgba(255,255,255,0.98);
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
 }
 
 .content h1 {
     margin: 0;
-    color: #fff;
+    color: #9DD1FF;
     font-size: 70px;
 }
 
@@ -28,14 +32,47 @@
     display: flex;
     justify-content: flex-start;
 }
+
+/* 
+font-family: 'Abel',
+sans-serif;
+font-family: 'Varela Round',
+sans-serif;
+font-family: 'Comfortaa',
+cursive;
+font-family: 'Baloo Chettan',
+cursive;
+font-family: 'Text Me One',
+sans-serif; */
+
 .main-info h1:first-child{
-    margin-right: 10px;
+    font-family: 'Comfortaa',
+    cursive;
+    margin-right: 30px;
 }
 .main-info h1:last-child {
+    font-family: 'Comfortaa',
+    sans-serif;
     margin-right: 10px;
     color: #637B96
 }
 
+.secondary-info{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+.secondary-info h2{
+    margin-right: 30px;
+}
+.secondary-info object{
+    height: 40px; 
+}
+
 h2{
+    font-family: 'Comfortaa',
+    sans-serif;
+    text-transform: capitalize;
     color: #627A97;
 }

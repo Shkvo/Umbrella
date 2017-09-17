@@ -8,15 +8,35 @@ header{
     align-items: center;
 }
 
+/* 
+font-family: 'Abel',
+sans-serif;
+font-family: 'Varela Round',
+sans-serif;
+font-family: 'Comfortaa',
+cursive;
+font-family: 'Baloo Chettan',
+cursive;
+font-family: 'Text Me One',
+sans-serif; */
+
 header input{
+    font-family: 'Comfortaa',
+    sans-serif;
     outline: none;
-    border: 1px solid #ccc;
+    border: none;
+    border-bottom: 1px solid #ccc;
     height: 24px;
     width: 250px;
     padding: 0 10px;
+    transition: .5s ease-in-out;
+}
+header input:focus{
+    border-bottom: 2px solid #627A97;
 }
 
 .logo-wrapp {
+    color: #627A97;
     display: flex;
     justify-content: flex-start;
     align-items: center;
