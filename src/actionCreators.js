@@ -1,7 +1,6 @@
 import { RECEIVE_WEATHER, RECEIVE_WEATHER_CITY } from './actions';
 import axios from 'axios';
-
-var apiKey = '149891947be9deecbb1ced41871cdb4e';
+const apiKey = '149891947be9deecbb1ced41871cdb4e';
 
 const receiveWeather = (response) => ({
     type: RECEIVE_WEATHER,

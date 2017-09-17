@@ -4,7 +4,7 @@ import { CircularProgress } from 'material-ui';
 
 const Spinner = () => (
     <div className="spinner-wrapp">
-        <MuiThemeProvider >
+        <MuiThemeProvider>
             <CircularProgress color="#fff" />
         </MuiThemeProvider>
     </div>

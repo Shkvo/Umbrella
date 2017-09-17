@@ -1,5 +1,6 @@
 import React from 'react';
 import './css/Footer.css';
+
 import f from './svg/f.svg';
 import g from './svg/g+.svg';
 import vk from './svg/vk.svg';

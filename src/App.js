@@ -1,18 +1,29 @@
 import React, { Component } from 'react';
-import Header from './Header';
-import Footer from './Footer';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
+
+import './css/Header.css'
 import './css/App.css';
 import './css/media.css';
 
-import {requestWeather, requestWeatherByCity} from './actionCreators';
-import Spinner from './Spinner';
+import Header from './Header';
+import Footer from './Footer';
 
+import logo from './svg/Umbrella.svg';
 import sun from './svg/sun.svg';
 import clouds from './svg/clouds.svg';
 import cloudSun from './svg/cloud-sun.svg';
 import fog from './svg/fog.svg';
 import rain from './svg/rain.svg';
+
+
+
+
+
+import {requestWeather, requestWeatherByCity} from './actionCreators';
+import Spinner from './Spinner';
+
+
+
 
 
 class App extends Component {
@@ -22,11 +33,11 @@ class App extends Component {
 		this.icon = null;
 	}
 	
-	componentDidMount() {
+	componentWillMount() {
 		this.props.getWeather();
 	}
 
-  render() {
+  	render() {
 
 		//Bad solution ////////////////////////////////////////////////////////////////
 		if (this.props.data[this.props.city]) {
@@ -50,15 +61,16 @@ class App extends Component {
 		//Bad solution ////////////////////////////////////////////////////////////////
 		
 		if(!this.props.data[this.props.city]){
-			return <div className="App">
-				<Header getWeatherByCity={this.props.getWeatherByCity} />
-				<Spinner />
+			return (
+			<div className="App">
+				<Header logo={logo} getWeatherByCity={this.props.getWeatherByCity} />
+					<Spinner />
 				<Footer />
-			</div>
+			</div>)
 		}else{
 			return (
 				<div className="App">
-					<Header getWeatherByCity={this.props.getWeatherByCity} />
+					<Header logo={logo} getWeatherByCity={this.props.getWeatherByCity} />
 					<div className="content">
 						<div className="main-info">
 							<h1>{this.props.data[this.props.city].name}</h1>
@@ -66,7 +78,7 @@ class App extends Component {
 						</div>
 						<div className="secondary-info">
 							<h2>{this.props.data[this.props.city].weather[0].description}</h2>
-							<object data={this.icon} type="image/svg+xml" aria-label="icon"></object>
+							<img src={this.icon} alt="weather icon"/>
 						</div>
 						<div className="another-info">
 							<div className="another">

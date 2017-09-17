@@ -7,23 +7,9 @@ header{
     justify-content: space-between;
     align-items: center;
 }
-
-/* 
-font-family: 'Abel',
-sans-serif;
-font-family: 'Varela Round',
-sans-serif;
-font-family: 'Comfortaa',
-cursive;
-font-family: 'Baloo Chettan',
-cursive;
-font-family: 'Text Me One',
-sans-serif; */
-
 header input{
     border-radius: none;
-    font-family: 'Comfortaa',
-    sans-serif;
+    font-family: 'Comfortaa', sans-serif;
     outline: none;
     border: none;
     border-bottom: 1px solid #ccc;
@@ -43,7 +29,7 @@ header input:focus{
     align-items: center;
 }
 
-.logo-wrapp object{
+.logo-wrapp img{
     height: 40px;
     margin-right: 10px;
 }

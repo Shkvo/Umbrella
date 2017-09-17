@@ -1,13 +1,9 @@
 import React, {Component} from 'react';
-import './css/Header.css'
-
-import logo from './svg/Umbrella.svg';
-
-
 
 class Header extends Component {
     constructor(props){
         super(props)
+
         this.state = {
             city: ''
         }
@@ -35,7 +31,7 @@ class Header extends Component {
         return (
             <header>
                 <div className="logo-wrapp">
-                    <object data={logo} type="image/svg+xml" aria-label="logo"> </object>
+                    <img src={this.props.logo} alt="logo"/>
                     <h1>Umbrella</h1>
                 </div>
                 
@@ -49,7 +45,5 @@ class Header extends Component {
         )
     }
 }
-
-
 
 export default Header;

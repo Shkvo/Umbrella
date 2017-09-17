@@ -10,6 +10,7 @@
     position: relative;
     height: 100vh;
 }
+
 .content{
     margin-top: 30px;
     font-family: sans-serif;
@@ -34,17 +35,6 @@
     justify-content: flex-start;
 }
 
-/* 
-font-family: 'Abel',
-sans-serif;
-font-family: 'Varela Round',
-sans-serif;
-font-family: 'Comfortaa',
-cursive;
-font-family: 'Baloo Chettan',
-cursive;
-font-family: 'Text Me One',
-sans-serif; */
 
 .main-info h1:first-child{
     font-family: 'Comfortaa',
@@ -67,7 +57,7 @@ sans-serif; */
 .secondary-info h2{
     margin-right: 30px;
 }
-.secondary-info object{
+.secondary-info img{
     height: 40px; 
 }
 
