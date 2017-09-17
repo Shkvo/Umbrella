@@ -21,6 +21,7 @@ font-family: 'Text Me One',
 sans-serif; */
 
 header input{
+    border-radius: none;
     font-family: 'Comfortaa',
     sans-serif;
     outline: none;
