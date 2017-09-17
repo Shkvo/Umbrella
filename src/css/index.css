@@ -1,7 +1,4 @@
-@font-face {
-  src: "../fonts/Raleway-Regular.ttf";
-  font-family: "Raleway";
-}
+
 /* 
 font-family: 'Abel',
 sans-serif;
@@ -21,3 +18,5 @@ body {
   background: #9DD1FF;
   /* background-image: url(http://images.clipartlogo.com/files/istock/previews/9058/90586121-weather-seamless-pattern-hand-drawn-doodle-umbrellas-and-clouds.jpg); */
 }
+
+

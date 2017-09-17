@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import Header from './Header';
+import Footer from './Footer';
 import {connect} from 'react-redux';
 import './css/App.css';
+import './css/media.css';
+
 import {requestWeather, requestWeatherByCity} from './actionCreators';
 import Spinner from './Spinner';
-import getIcon from './icon';
 
 import sun from './svg/sun.svg';
 import clouds from './svg/clouds.svg';
@@ -66,7 +68,26 @@ class App extends Component {
 							<h2>{this.props.data[this.props.city].weather[0].description}</h2>
 							<object data={this.icon} type="image/svg+xml" aria-label="icon"></object>
 						</div>
+						<div className="another-info">
+							<div className="another">
+								<h3>Pressure:</h3>
+								<h2>{this.props.data[this.props.city].main.pressure} mbar</h2>
+							</div>
+							<div className="another">
+								<h3>Humidity:</h3>
+								<h2>{this.props.data[this.props.city].main.humidity}%</h2>
+							</div>
+							<div className="another">
+								<h3>Wind:</h3>
+								<h2>
+									{this.props.data[this.props.city].wind.speed} m/s
+									{this.props.data[this.props.city].wind.deg ? ', direction: ' 
+									+ Math.round(this.props.data[this.props.city].wind.deg) +'°':""}
+								</h2>
+							</div>
+						</div>
 					</div>
+					<Footer />
 				</div>
 			);
 		}

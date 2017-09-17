@@ -1,0 +1,53 @@
+/* Large Devices, Wide Screens */
+@media screen and (max-width: 1200px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media screen and (max-width: 992px) {
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width: 768px) {
+    header > input {
+        width: 160px;
+    }
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width: 425px) {
+    header>input {
+        width: 90%;
+    }
+    .logo-wrapp > h1{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .content h1 {
+        font-size: 34px;
+    }
+    .main-info h1:first-child {
+        margin-right: 20px;
+    }
+    .secondary-info h2 {
+        font-size: 15px;
+        margin-right: 20px;
+    }
+    .secondary-info object {
+        height: 35px;
+    }
+    .another h2 {
+        font-size: 18px;
+    }
+    .another h3 {
+        font-size: 13px;
+    }
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width: 320px) {
+
+}

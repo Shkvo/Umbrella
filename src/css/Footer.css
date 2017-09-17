@@ -1,0 +1,30 @@
+.footer-wrapp{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+footer{
+    height: 60px;
+    width: 100vw;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.socials{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.socials a{
+    display: block;
+}
+.socials img{
+    margin: 0 10px;
+    height: 36px;
+    transition: .2s ease-in-out;
+}
+ 
+.socials a:hover img{
+transform: scale(1.05);
+}

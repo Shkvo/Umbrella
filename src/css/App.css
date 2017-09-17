@@ -7,6 +7,7 @@
 }
 
 .app{
+    position: relative;
     height: 100vh;
 }
 .content{
@@ -54,7 +55,7 @@ sans-serif; */
     font-family: 'Comfortaa',
     sans-serif;
     margin-right: 10px;
-    color: #637B96
+    color: #637B96;
 }
 
 .secondary-info{
@@ -76,3 +77,26 @@ h2{
     text-transform: capitalize;
     color: #627A97;
 }
+
+.another-info{
+    margin-top: 10px;
+}
+.another{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.another h2{
+    text-transform: none;
+    margin: 0;
+}
+.another h3{
+    padding: 0;
+    margin: 0;
+    margin-right: 10px;
+    font-family: 'Comfortaa';
+    color:#9DD1FF;
+}
+
