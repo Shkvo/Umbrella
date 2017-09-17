@@ -13,7 +13,10 @@ Clone or download project:
 ```
 git clone https://github.com/Shkvo/Umbrella.git
 ```
-
+Install all dependencies:
+```
+npm i
+```
 To run development server enter:
 
 ```
