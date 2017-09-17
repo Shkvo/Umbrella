@@ -1,7 +1,12 @@
 {
-  "main.css": "static/css/main.274d09e6.css",
-  "main.css.map": "static/css/main.274d09e6.css.map",
-  "main.js": "static/js/main.202a4530.js",
-  "main.js.map": "static/js/main.202a4530.js.map",
-  "static\\media\\Umbrella.svg": "static/media/Umbrella.bb3a5e73.svg"
+  "main.css": "static/css/main.6032093f.css",
+  "main.css.map": "static/css/main.6032093f.css.map",
+  "main.js": "static/js/main.5c95eba9.js",
+  "main.js.map": "static/js/main.5c95eba9.js.map",
+  "static\\media\\Umbrella.svg": "static/media/Umbrella.bb3a5e73.svg",
+  "static\\media\\cloud-sun.svg": "static/media/cloud-sun.1302207e.svg",
+  "static\\media\\clouds.svg": "static/media/clouds.5939769b.svg",
+  "static\\media\\fog.svg": "static/media/fog.bac58a53.svg",
+  "static\\media\\rain.svg": "static/media/rain.df82e796.svg",
+  "static\\media\\sun.svg": "static/media/sun.5c678039.svg"
 }
