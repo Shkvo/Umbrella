@@ -15,16 +15,8 @@ import cloudSun from './svg/cloud-sun.svg';
 import fog from './svg/fog.svg';
 import rain from './svg/rain.svg';
 
-
-
-
-
 import {requestWeather, requestWeatherByCity} from './actionCreators';
 import Spinner from './Spinner';
-
-
-
-
 
 class App extends Component {
 
@@ -68,45 +60,49 @@ class App extends Component {
 				<Footer />
 			</div>)
 		}else{
+			var city = this.props.data[this.props.city];
 			return (
 				<div className="App">
+
 					<Header logo={logo} getWeatherByCity={this.props.getWeatherByCity} />
+					
 					<div className="content">
 						<div className="main-info">
-							<h1>{this.props.data[this.props.city].name}</h1>
-							<h1>{Math.floor(this.props.data[this.props.city].main.temp - 273)}C°</h1>
+							<h1>{city.name}</h1>
+							<h1>{Math.floor(city.main.temp - 273)}C°</h1>
 						</div>
 						<div className="secondary-info">
-							<h2>{this.props.data[this.props.city].weather[0].description}</h2>
+							<h2>{city.weather[0].description}</h2>
 							<img src={this.icon} alt="weather icon"/>
 						</div>
 						<div className="another-info">
 							<div className="another">
 								<h3>Pressure:</h3>
-								<h2>{this.props.data[this.props.city].main.pressure} mbar</h2>
+								<h2>{city.main.pressure} mbar</h2>
 							</div>
 							<div className="another">
 								<h3>Humidity:</h3>
-								<h2>{this.props.data[this.props.city].main.humidity}%</h2>
+								<h2>{city.main.humidity}%</h2>
 							</div>
 							<div className="another">
 								<h3>Wind:</h3>
 								<h2>
-									{this.props.data[this.props.city].wind.speed} m/s
-									{this.props.data[this.props.city].wind.deg ? ', direction: ' 
-									+ Math.round(this.props.data[this.props.city].wind.deg) +'°':""}
+									{city.wind.speed} m/s
+									{city.wind.deg ? ', direction: ' 
+									+ Math.round(city.wind.deg) +'°':""}
 								</h2>
 							</div>
 						</div>
 					</div>
+
 					<Footer />
+
 				</div>
 			);
 		}
 	}
 }
 	
-
 const mapStateToProps = (state) => (
 	{
 		data: state.weatherData,
@@ -125,7 +121,6 @@ const mapDispatchToProps = (dispatch) => (
 		}
 	}
 )
-
 
 export default connect(
 	mapStateToProps,
