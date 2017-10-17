@@ -20,7 +20,7 @@ export const requestWeather = () => {
                 lon : position.coords.longitude
             };
             axios
-                .get(`http://api.openweathermap.org/data/2.5/weather?lat=${pos.lat}&lon=${pos.lon}&APPID=${apiKey}`)
+                .get(`https://api.openweathermap.org/data/2.5/weather?lat=${pos.lat}&lon=${pos.lon}&APPID=${apiKey}`)
                 .then(response => {
                     dispatch(receiveWeather(response));
                 });
@@ -36,7 +36,7 @@ export const requestWeatherByCity = (city) => {
             dispatch(receiveWeatherByCity(city));
         }else{
             axios
-                .get(`http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${apiKey}`)
+                .get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${apiKey}`)
                 .then(response => {
                     dispatch(receiveWeather(response));
                 });
